@@ -1,0 +1,39 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.header {
+   width: 100%;
+   height: auto;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+   background-color: rgb(43, 23, 76);
+}
+
+h1{
+   color:#D89078 ;
+}
+
+.nav-container li {
+   display: inline-block;
+   margin: 1rem;
+
+}
+
+.nav-container li a {
+   font-size: 16px;
+   color: aliceblue;
+   cursor: pointer;
+
+
+}
+
+.nav-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}

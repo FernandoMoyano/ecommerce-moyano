@@ -1,26 +1,37 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
-import "./Navbar.css"
-
+import "./Navbar.css";
 
 const NavBar = () => {
-
 	return (
 		<header className="header">
-		<h1>TODO-TECH</h1>
+			<NavLink clas to="/">
+				<h1>TODO-TECH</h1>
+			</NavLink>
 			<nav className="nav-container">
 				<ul>
 					<li>
-						<a>Placas de video</a>
+						<NavLink to='/category/placas de video'>
+							Placas de video
+						</NavLink>
 					</li>
 					<li>
-						<a>Monitores</a>
+						<NavLink to='/category/monitores'>
+							Monitores
+						</NavLink>
 					</li>
 					<li>
-						<a>Butacas</a>
+						<NavLink to='category/butacas'>
+							Butacas
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to="cart">
+							<CartWidget />
+						</NavLink>
 					</li>
 				</ul>
-				<CartWidget/>
 			</nav>
 		</header>
 	);

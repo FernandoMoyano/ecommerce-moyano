@@ -1,0 +1,59 @@
+.containerCount{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.containerButtons{
+   width: 100%;
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   align-content: center;
+  
+  
+}
+label{
+   color: black;
+   padding: 10px;
+   
+}
+.decrement{
+   width: 30px;
+   height: 20px;
+   cursor: pointer;
+   border: none;
+   border-radius: 4px;
+   background-color: red;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   -ms-border-radius: 4px;
+   -o-border-radius: 4px;
+}
+
+.increment{
+   width: 30px;
+   height: 20px;
+   cursor: pointer;
+   border: none;
+   border-radius: 4px;
+   background-color: greenyellow;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   -ms-border-radius: 4px;
+   -o-border-radius: 4px;
+}
+
+.handleOnAdd{
+   background-color: aquamarine;
+   border: none;
+   cursor: pointer;
+   margin-top: 10px;
+   padding: 10px;
+   border-radius: 8px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   -ms-border-radius: 8px;
+   -o-border-radius: 8px;
+}

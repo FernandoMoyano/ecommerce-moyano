@@ -2,7 +2,7 @@ let products = [
 	{
 		id: "1",
 		name: "MONITOR 19 LED PHILIPS 193V5LHSB2/55 HDMI",
-		price: 20.699,
+		price: "$ 20.699",
 		category: "monitores",
 		img: "https://www.venex.com.ar/products_images/thumb/1585889887_monitor_19_led_philips_193v5lhsb2_55_hdmi.jpg",
 		stock: 25,
@@ -134,7 +134,7 @@ export const getProductById = (id) => {
 	return new Promise((resuleto, rechazada) => {
 		setTimeout(() => {
 			resuleto(id ? products.find((item) => item.id === id) : products);
-		}, 2000);
+		}, 1000);
 	});
 };
 

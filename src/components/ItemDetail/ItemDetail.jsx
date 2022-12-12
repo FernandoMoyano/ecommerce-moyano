@@ -1,7 +1,13 @@
 import React from "react";
+import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ product }) => {
+
+	const onAdd=(count)=>{
+		console.log(`se seleccionaron ${count} productos`);
+	}
+	
 	return (
 		<article className="CardDetail">
 			<picture>
@@ -21,7 +27,9 @@ const ItemDetail = ({ product }) => {
 				<p >Precio: {product.price}</p>
 				<p >stock: {product.stock}</p>
 			</section>
-			<footer className="ItemFooter"></footer>
+			<footer className="ItemFooter">
+				<ItemCount initial={1} stock={10} onAdd={onAdd}/>
+			</footer>
 		</article>
 	);
 };

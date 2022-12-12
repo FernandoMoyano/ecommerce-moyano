@@ -8,14 +8,7 @@ const ItemDetailContainer = () => {
 	const [loading, setLoading] = useState(true);
 	const { productId } = useParams();
 
-/* 	useEffect(() => {
-		getProducts()
-			.then((res) => setProduct(res.find(product=>product.id===parseInt(productId))))
-			.catch((err) => console.log(err))
-			.finally(() => setLoading(false));
-	}, []);
 
-	 */
 
 	useEffect(()=>{
       getProductById(productId)
@@ -24,9 +17,8 @@ const ItemDetailContainer = () => {
         .finally(() => setLoading(false))
     },[])
 
-    console.log(product)
-
-
+  
+	 /*   console.log(product) */
 
 
 

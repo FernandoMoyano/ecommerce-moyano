@@ -5,7 +5,7 @@ import "./ItemDetail.css";
 const ItemDetail = ({ product }) => {
 
 	const onAdd=(count)=>{
-		console.log(`se seleccionaron ${count} productos`);
+		alert(`se seleccionaron ${count} productos`);
 	}
 	
 	return (

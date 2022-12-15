@@ -1,13 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
+import { ButtonsCart } from "../ButtonsCart/ButtonsCart";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
-const ItemDetail = ({ product }) => {
 
-	const onAdd=(count)=>{
-		alert(`se seleccionaron ${count} productos`);
-	}
-	
+const ItemDetail = ({ product }) => {
+	const [isInCart, setIsInCart] = useState("false");
+
+	const onAdd = () => {
+		setIsInCart("true");
+	};
+
 	return (
 		<article className="CardDetail">
 			<picture>
@@ -23,12 +26,16 @@ const ItemDetail = ({ product }) => {
 
 			<section className="InfoDetail">
 				<p>Categoria:{product.category}</p>
-				<p >Descripción: {product.description}</p>
-				<p >Precio: {product.price}</p>
-				<p >stock: {product.stock}</p>
+				<p>Descripción: {product.description}</p>
+				<p>Precio: {product.price}</p>
+				<p>stock: {product.stock}</p>
 			</section>
 			<footer className="ItemFooter">
-				<ItemCount initial={1} stock={10} onAdd={onAdd}/>
+				{isInCart === "false" ? (
+					<ItemCount initial={1} stock={10} onAdd={onAdd} />
+				) : (
+					<ButtonsCart />
+				)}
 			</footer>
 		</article>
 	);

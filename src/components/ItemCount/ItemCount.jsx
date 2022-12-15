@@ -18,6 +18,7 @@ export const ItemCount = ({ initial = 1, stock = 10, onAdd }) => {
 
 	const handleOnAdd = () => {
 		onAdd(count);
+		alert(`se agregaron ${count} productos al carrito`)
 	};
 
 	return (

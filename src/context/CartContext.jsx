@@ -1,14 +1,15 @@
 import { createContext } from "react";
 
-export const CartContext=createContext([])
-
-/* export const UseCartContext=useContext(CartContext);
-console.log(CartContext); */
+const CartContext = createContext([]);
 
 
 
-/* return(
- <CartContext.Provider>
+export const CartContextProvider = ({ children }) => {
+	//estados y funciones globales
+	return (
+   <CartContext.Provider value={{}}>
+      {children}
+   </CartContext.Provider>
+   )
+};
 
- </CartContext.Provider>
-) */

@@ -1,16 +1,23 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import { useCartContext } from "../../context/CartContext";
 import { ButtonsCart } from "../ButtonsCart/ButtonsCart";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
-
 const ItemDetail = ({ product }) => {
+	
+
+	const { addItem, cartList } = useCartContext();
 	const [isInCart, setIsInCart] = useState("false");
 
-	const onAdd = () => {
+	const onAdd = (quantity) => {
 		setIsInCart("true");
+
+		//esta funcion proviene del Cartcontext
+		addItem({ ...product, quantity });
 	};
 
+/*console.log(cartList);*/
 	return (
 		<article className="CardDetail">
 			<picture>
@@ -32,7 +39,7 @@ const ItemDetail = ({ product }) => {
 			</section>
 			<footer className="ItemFooter">
 				{isInCart === "false" ? (
-					<ItemCount initial={1} stock={10} onAdd={onAdd} />
+					<ItemCount initial={1}  onAdd={onAdd} />
 				) : (
 					<ButtonsCart />
 				)}

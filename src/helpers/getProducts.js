@@ -139,31 +139,3 @@ export const getProductById = (id) => {
 	});
 };
 
-//Obtener los productos por categoria
-
-/* export const getProducts = (category) => {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			category
-				? resolve(
-						products.filter(
-							(prod) =>
-								prod.category ===
-								category
-						)
-				  )
-				: resolve(products);
-		}, 1000);
-	});
-}; */
-
-/* Obtener los producto por categoria
-
-export const getProductById = (id) => {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve(products.find((product) => product.id === parseInt(id)));
-		}, 1000);
-	});
-};
- */

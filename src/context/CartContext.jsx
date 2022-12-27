@@ -28,7 +28,6 @@ export const CartContextProvider = ({ children }) => {
 
 
 
-
 	/* Obtener la cantidad */
 	const getQuantity = () => {
 		let count = 0;

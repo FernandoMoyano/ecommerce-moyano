@@ -39,10 +39,16 @@
 
 .Remove{
    width: 20px;
+   cursor: pointer;
    height: 30px;
    border: none;
-   background-color: brown;
+   border-radius: 4px;
+   background-color: orangered;
    color: aliceblue;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   -ms-border-radius: 4px;
+   -o-border-radius: 4px;
 }
 .TotalPrice{
    font-weight: bold;
@@ -59,6 +65,7 @@
 
 .ClearCart{
    padding: 10px;
+   cursor: pointer;
    border-radius: 8px;
    background-color: orangered;
    color: aliceblue;
@@ -67,4 +74,19 @@
    -moz-border-radius: 8px;
    -ms-border-radius: 8px;
    -o-border-radius: 8px;
+}
+
+.CarroVacio{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.LinkCarroVacio{
+   text-decoration: none;
+   list-style: none;
+   background-color: orangered;
+   padding: 10px;
+   color: aliceblue;
 }

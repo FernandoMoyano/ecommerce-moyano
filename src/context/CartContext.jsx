@@ -11,10 +11,22 @@ export const CartContextProvider = ({ children }) => {
 	//estados y funciones globales
 
 	
-	//(agregar un producto)
-	const addItem = (product) => {
-		setCartList([...cartList, product]);
-	};
+	//(agregar un item)
+   const addItem = (product) => {
+		// si está?
+		const idx = cartList.findIndex(prod => prod.id === product.id) //no esta -> -1
+		
+		if (idx !== -1) {
+			 // cartList[idx].cant = cartList[idx].cant + product.cant
+			 cartList[idx].quantity +=  product.quantity
+			 setCartList( [ ...cartList ] ) 
+		} else {
+			 setCartList([...cartList, product]) // push
+		}  
+	
+  }
+
+
 
 
 	/* Obtener la cantidad */
@@ -28,6 +40,12 @@ export const CartContextProvider = ({ children }) => {
 	};
 
 
+
+	/* Precio total */
+	const totalPrice= () => cartList.reduce((quantity, producto) => quantity += (producto.price * producto.quantity) , 0)
+
+
+
 	/* Vaciar Carrito */
 	const clearCart = () => {
 		setCartList([]);
@@ -36,8 +54,8 @@ export const CartContextProvider = ({ children }) => {
 
 	/* Remover un item */
 	const removeItem = (id) => {
-		const newProducts = cartList.filter(prod => prod.id !== id)
-		setCartList(newProducts);
+	setCartList(cartList.filter(prod => prod.id !== id))
+		
 	};
 
 	return (
@@ -47,6 +65,7 @@ export const CartContextProvider = ({ children }) => {
 				addItem,
 				getQuantity,
 				clearCart,
+				totalPrice,
 				removeItem
 			}}
 		>

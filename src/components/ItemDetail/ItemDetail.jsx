@@ -5,8 +5,6 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ product }) => {
-	
-
 	const { addItem, cartList } = useCartContext();
 	const [isInCart, setIsInCart] = useState("false");
 
@@ -17,33 +15,43 @@ const ItemDetail = ({ product }) => {
 		addItem({ ...product, quantity });
 	};
 
-/*console.log(cartList);*/
+	/*console.log(cartList);*/
 	return (
 		<article className="CardDetail">
-			<picture>
-				<img
-					src={product.img}
-					alt={product.name}
-					className="ItemImg"
-				/>
-			</picture>
-			<header className="HeaderDetail">
-				<h2> {product.name} </h2>
-			</header>
+			<div>
+				<picture>
+					<img
+						src={product.img}
+						alt={product.name}
+						className="ItemImg"
+					/>
+				</picture>
+				<div className="HeaderDetail">
+					<h2> {product.name} </h2>
+				</div>
+			</div>
 
-			<section className="InfoDetail">
-				<p>Categoria:{product.category}</p>
-				<p>Descripción: {product.description}</p>
-				<p>Precio: {product.price}</p>
-				<p>stock: {product.stock}</p>
-			</section>
-			<footer className="ItemFooter">
-				{isInCart === "false" ? (
-					<ItemCount initial={1}  onAdd={onAdd} />
-				) : (
-					<ButtonsCart />
-				)}
-			</footer>
+			<div className="InfoDetail">
+
+				<div className="ContainerParrafo">
+					<p><span className="InfoDescription">Categoria: </span>{product.category}</p>
+					<p><span className="InfoDescription">Descripción:</span> {product.description}</p>
+					<p><span className="InfoDescription">Precio: $</span> {product.price}</p>
+					<p><span className="InfoDescription">stock: </span>{product.stock}</p>
+				</div>
+
+				<footer className="ItemFooter">
+					{isInCart === "false" ? (
+						<ItemCount
+							initial={1}
+							stock={product.stock}
+							onAdd={onAdd}
+						/>
+					) : (
+						<ButtonsCart />
+					)}
+				</footer>
+			</div>
 		</article>
 	);
 };

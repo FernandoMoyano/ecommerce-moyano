@@ -38,7 +38,7 @@ label{
    cursor: pointer;
    border: none;
    border-radius: 4px;
-   background-color: greenyellow;
+   background-color: #82d407;
    -webkit-border-radius: 4px;
    -moz-border-radius: 4px;
    -ms-border-radius: 4px;
@@ -46,11 +46,12 @@ label{
 }
 
 .handleOnAdd{
-   background-color: aquamarine;
+   background-color: #066e1e;
    border: none;
    cursor: pointer;
    margin-top: 10px;
    padding: 10px;
+   color: aliceblue;
    border-radius: 8px;
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;

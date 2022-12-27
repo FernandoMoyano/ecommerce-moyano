@@ -7,8 +7,8 @@ const CartWidget = () => {
 
 	return (
 		<div className="cart-container">
-			<img className="cart" src="../../../public/images/cart3.svg"></img>
-			<div className="cart-item">{getQuantity()}</div>
+			<img className="cart" src="../../../public/cart2.svg"></img>
+			<div className="cart-item">{getQuantity()>0 && getQuantity()}</div>
 		</div>
 	);
 };

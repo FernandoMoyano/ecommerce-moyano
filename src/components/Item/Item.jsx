@@ -13,10 +13,10 @@ const Item =  ({ id, name, img, price, }) =>{
 					<img src={img} alt={name} className="ItemImg" />
 				</picture>
 				<section>
-					<h3 className="Info">{price}</h3>
+					<h3 className="Info">${price}</h3>
 				</section>
 				<footer className="ItemFooter">
-					<div className="Option">View</div>
+					<div className="Option">View detail</div>
 				</footer>
 			</article>
 		</Link>

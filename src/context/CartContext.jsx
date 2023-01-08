@@ -10,22 +10,22 @@ export const CartContextProvider = ({ children }) => {
 	const [cartList, setCartList] = useState([]);
 	//estados y funciones globales
 
-	
-	//(agregar un item)
-   const addItem = (product) => {
-		// si está?
-		const idx = cartList.findIndex(prod => prod.id === product.id) //no esta -> -1
-		
-		if (idx !== -1) {
-			 // cartList[idx].cant = cartList[idx].cant + product.cant
-			 cartList[idx].quantity +=  product.quantity
-			 setCartList( [ ...cartList ] ) 
-		} else {
-			 setCartList([...cartList, product]) // push
-		}  
-	
-  }
 
+
+	//(agregar un item)
+	const addItem = (product) => {
+		//si el producto no esta -> -1
+		const idx = cartList.findIndex((prod) => prod.id === product.id);
+
+		if (idx !== -1) {
+			//si el producto NO ESTÁ
+			cartList[idx].quantity += product.quantity;
+			setCartList([...cartList]);
+		} else {
+			//si el producto SI ESTÁ
+			setCartList([...cartList, product]); // push del product
+		}
+	};
 
 
 	/* Obtener la cantidad */
@@ -38,23 +38,25 @@ export const CartContextProvider = ({ children }) => {
 		return count;
 	};
 
-
-
+	
 	/* Precio total */
-	const totalPrice= () => cartList.reduce((quantity, producto) => quantity += (producto.price * producto.quantity) , 0)
-
-
+	const totalPrice = () =>
+		cartList.reduce(
+			(quantity, producto) =>
+				(quantity +=
+					producto.price.toFixed(3) *
+					producto.quantity.toFixed(3)),
+			0
+		);
 
 	/* Vaciar Carrito */
 	const clearCart = () => {
 		setCartList([]);
 	};
 
-
 	/* Remover un item */
 	const removeItem = (id) => {
-	setCartList(cartList.filter(prod => prod.id !== id))
-		
+		setCartList(cartList.filter((prod) => prod.id !== id));
 	};
 
 	return (
@@ -65,7 +67,7 @@ export const CartContextProvider = ({ children }) => {
 				getQuantity,
 				clearCart,
 				totalPrice,
-				removeItem
+				removeItem,
 			}}
 		>
 			{children}

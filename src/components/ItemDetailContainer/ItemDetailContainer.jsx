@@ -32,12 +32,10 @@ const ItemDetailContainer = () => {
 		.finally(() => setLoading(false))
 	 },[])
 
-	     console.log(product)
+	     /* console.log(product) */
 
   
 	
-
-
 
 	return (
 		<div className="itemListContainer">

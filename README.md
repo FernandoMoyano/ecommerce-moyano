@@ -5,7 +5,7 @@
 <p>Para Ejecutar el poyecto</p>
 
 ## Descripcion del proyecto
-###
+<p>Este ecommerce representa en su pagina de inicio </p>
 
 
 

@@ -24,7 +24,7 @@
 <p>Para Ejecutar el poyecto</p>
 
 ## Descripcion del proyecto
-<p>Este ecommerce representa en su pagina de inicio </p>
+<p>Este ecommerce representa en su pagina de inicio la totalidad de los productos que vende , en la parte superior nos  encontramos con un menu de navegaion el cual nos permite filtrar dichos productos por categforia, para cada Producto nos encontramos con un botón "view detail", el cual nos permite ingresar a dicho producto y observar sus detalles, entre ellos : Precio , imagen, descripción, stock etc, a partir de esta ruta podemos agregar cuantos productos querramos en nuestro carro de compras la cantidad se vera reflejada en nuestro carro 🛒, al cual podemos aceder haiendo click sobre la imagen o desde "ir al cart" despues de seleeccionar "agregar al cart" una vez en el carro de compras podemos eliminar el producto o los productos segun nuestra compra o podemos concretar definitivamente la compra con el botón  </p>
 
 
 

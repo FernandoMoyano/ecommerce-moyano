@@ -11,16 +11,6 @@ const ItemDetailContainer = () => {
 
 
 
-/* 	useEffect(()=>{
-      getProductById(productId)
-      .then(resp => setProduct(resp))
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
-    },[]) */
-
-	  /*   console.log(product) */
-
-
 
 	 useEffect(()=>{
 		const db=getFirestore()
@@ -35,8 +25,6 @@ const ItemDetailContainer = () => {
 	     /* console.log(product) */
 
   
-	
-
 	return (
 		<div className="itemListContainer">
 			{loading ? (

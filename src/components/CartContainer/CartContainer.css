@@ -1,121 +1,8 @@
-/* .ContenedorCart{
-   margin: auto;
-   width: 80%;
-   display: flex;
-   flex-wrap: wrap;
-   flex-direction: column;
-   align-items: center;
+
+
+body {
+   overflow: visible;
 }
-
-.InfoDetailItem{
-   font-weight: 700;
-   font-size: 16px;
-}
-
-.FooterButtons{
-   width: 20%;
-   display: flex;
-   justify-content: center;
- 
-}
-
-.Sustract{
-   width: 20px;
-   height: 30px;
-   border: none;
-   background-color:orangered;
-   color: aliceblue;
-   padding: 5px;
-  
-  
-}
-.Add{
-   width: 20px;
-   height: 30px;
-   border: none;
-   background-color: #82d407;
-   color: aliceblue;
-}
-
-.Remove{
-   width: 20px;
-   cursor: pointer;
-   height: 30px;
-   border: none;
-   border-radius: 4px;
-   background-color: orangered;
-   color: aliceblue;
-   -webkit-border-radius: 4px;
-   -moz-border-radius: 4px;
-   -ms-border-radius: 4px;
-   -o-border-radius: 4px;
-}
-.TotalPrice{
-   font-weight: bold;
-}
-
-.Price{
-   font-weight: 500;
-}
-
-.FooterButtons button{
-   padding: 5px;
-   margin: 5px;
-}
-
-.ClearCart{
-   padding: 10px;
-   cursor: pointer;
-   border-radius: 8px;
-   background-color: orangered;
-   color: aliceblue;
-   border: none;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   -ms-border-radius: 8px;
-   -o-border-radius: 8px;
-}
-
-.CheckOut{
-   padding: 10px;
-   cursor: pointer;
-   border-radius: 8px;
-   background-color: #82d407;
-   color: aliceblue;
-   border: none;
-   margin-left: 10px;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   -ms-border-radius: 8px;
-   -o-border-radius: 8px;
-}
-
-.CarroVacio{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-}
-
-.ButtonsCheckout{
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   align-items: center;
-   align-self: center;
-   justify-items: center;
-}
-
-.LinkCarroVacio{
-   text-decoration: none;
-   list-style: none;
-   background-color: orangered;
-   padding: 10px;
-   color: aliceblue;
-} */
-
-
-
 
 .cartContainer {
    font-family: 'Poppins', sans-serif;
@@ -123,15 +10,21 @@
 
 h1 {
    font-weight: bold;
-  /*  padding-left: 5rem; */
+  
+
+}
+.h1{
+   margin: auto;
+   text-align: center;
+   margin-bottom: 2rem;
 }
 
 .emptyCart {
-   display:flex; 
+   display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   height: 60vh;
+
 }
 
 .btnProducts {
@@ -139,21 +32,14 @@ h1 {
    margin: 2rem;
    padding: 0.5rem 1rem;
    font-size: 1.3rem;
-   background-color: #67b967;
+   background-color: #066e1e;
    border-radius: 10px;
    border-style: none;
-   color: lightgray;
-   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.438);
-   transition: all 0.5s;
+   color: aliceblue;
    width: auto;
 }
 
-.btnProducts:hover  {
-   background-color: lightgray;
-   color: white;
-   box-shadow: none;
-   transform: scale(110%);
-}
+
 
 .btnCancel {
    background-color: rgb(236, 0, 0);
@@ -166,20 +52,16 @@ h1 {
    font-size: 1em;
    margin: 0.5em;
    padding: 0.5em 1em;
-   background-color: #67b967;
-   border-radius: 10px;
+   background-color: #066e1e;
+   border-radius: 8px;
    border-style: none;
-   color: lightgray;
-   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.438);
-   transition: all 0.5s;
+   color: aliceblue;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   -ms-border-radius: 8px;
+   -o-border-radius: 8px;
 }
 
-.btnCart:hover  {
-   background-color: lightgray;
-   color: white;
-   box-shadow: none;
-   transform: scale(110%);
-}
 
 .itemCart {
    margin: 1rem 8rem;
@@ -190,9 +72,7 @@ h1 {
    align-items: center;
 }
 
-.imgCart {
-   width: 20rem;
-}
+
 
 .cartContent {
    display: flex;
@@ -204,23 +84,25 @@ h1 {
    flex-direction: column;
    align-items: center;
    justify-content: flex-end;
-  
+
 }
 
 .modalOrder {
    font-family: 'Poppins', sans-serif;
    text-align: center;
+
+
 }
 
 .modalForm {
    display: flex;
    flex-direction: column;
    align-items: center;
-   font-size: 1.5rem;
+   font-size: 1.2rem;
 }
 
 .modalInput {
-   width: 70%;
+   width: 50%;
 }
 
 .hide {
@@ -230,22 +112,20 @@ h1 {
 .swal-title {
    font-family: 'Poppins', sans-serif;
    margin-bottom: 1rem;
- }
+}
 
- .swal-text {
+.swal-text {
    font-family: 'Poppins', sans-serif;
    font-size: 1.3rem;
    margin-bottom: 1rem;
    text-align: center;
- }
+}
 
 
 
-
- @media only screen and (max-width:991px) {
+@media only screen and (max-width:991px) {
 
    .itemCart {
-       margin: 1rem 2rem;
+      margin: 1rem 2rem;
    }
-
 }

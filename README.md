@@ -14,7 +14,9 @@
  JAVASCRIPT <img width="50px" height="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
  REACT <img width="50px" height="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
 
-</div># ecommerce-moyano
+</div>
+
+# ecommerce-moyano
 
 ![2022-12-12_21h11_59](https://user-images.githubusercontent.com/64481454/207191130-93911beb-5386-4277-a25e-3ec2545949d6.gif)
 

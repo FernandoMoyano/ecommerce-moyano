@@ -19,7 +19,7 @@
 
 # ecommerce-moyano
 
-### Deploy:
+## Deploy:
 
 ## npm install
 <p>para instalar las dependencias necesarias que nos permitan ejecutar el proyeto luego de clonar el mismo</p>

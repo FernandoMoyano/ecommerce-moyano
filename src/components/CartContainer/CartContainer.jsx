@@ -52,20 +52,15 @@ const CartContainer = () => {
 	const createOrder = () => {
 		const queryOrders = collection(db, "orders");
 		if (order.buyer.name === "") {
-			showMessage("error", "Debes ingresar un nombre", false);
+			showMessage("error", "todos los campos deben ser completados", false);
 		} else if (order.buyer.phone === "") {
-			showMessage("error", "El campo telefono se encuentra vacio", false);
+			showMessage("error", "todos los campos deben ser completados", false);
 		} else if (order.buyer.email === "") {
-			showMessage("error", "debes ingresar un correo", false);
-		} else if (
-			order.buyer.email !==
-			/^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/
-		) {
-			showMessage("error", "debes ingresar un correo valido", false);
+			showMessage("error", "todos los campos deben ser completados", false);
 		} else if (email2 === "") {
 			showMessage("error", "todos los campos deben ser completados", false);
 		} else if (order.buyer.email !== email2)
-			showMessage("error", "Los emails deben coincidir", false);
+			showMessage("error", "el email debe coincidir", false);
 		else {
 
 			

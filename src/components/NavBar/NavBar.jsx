@@ -8,7 +8,7 @@ const NavBar = () => {
 		<header className="header">
 			<NavLink clas to="/">
 				<div className="icon">
-				<img src="../../../public/favicon.svg"></img>
+				<img className="icon-brand" src="https://cdn-icons-png.flaticon.com/512/3577/3577005.png"></img>
 					<h1>TODO-TECH</h1>
 				</div>
 			</NavLink>

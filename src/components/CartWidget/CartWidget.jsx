@@ -7,7 +7,7 @@ const CartWidget = () => {
 
 	return (
 		<div className="cart-container">
-			<img className="cart" src="/public/cart2.svg"></img>
+			<img className="cart" src="https://cdn-icons-png.flaticon.com/512/107/107831.png"></img>
 			<div className="cart-item">{getQuantity()>0 && getQuantity()}</div>
 		</div>
 	);

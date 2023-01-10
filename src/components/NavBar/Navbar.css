@@ -55,3 +55,7 @@ h1 {
    align-items: center;
 
 }
+.icon{
+   display: flex;
+   justify-content: space-around;
+}

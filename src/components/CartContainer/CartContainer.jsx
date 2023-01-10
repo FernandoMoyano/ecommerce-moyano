@@ -52,18 +52,23 @@ const CartContainer = () => {
 	const createOrder = () => {
 		const queryOrders = collection(db, "orders");
 		if (order.buyer.name === "") {
-			showMessage("error", "Todos los campos deben ser completados", false);
-		} else if (order.buyer.phone === 0) {
-			showMessage("error", "Todos los campos deben ser completados", false);
+			showMessage("error", "Debes ingresar un nombre", false);
+		} else if (order.buyer.phone === "") {
+			showMessage("error", "El campo telefono se encuentra vacio", false);
 		} else if (order.buyer.email === "") {
-			showMessage("error", "Todos los campos deben ser completados", false);
+			showMessage("error", "debes ingresar un correo", false);
+		} else if (
+			order.buyer.email !==
+			/^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/
+		) {
+			showMessage("error", "debes ingresar un correo valido", false);
 		} else if (email2 === "") {
-			showMessage("error", "Todos los campos deben ser completados", false);
+			showMessage("error", "todos los campos deben ser completados", false);
 		} else if (order.buyer.email !== email2)
 			showMessage("error", "Los emails deben coincidir", false);
 		else {
 
-
+			
 			/* Updating the stock in the database. */
 			cartList.forEach((product) => {
 				const queryDoc = doc(db, "products", product.id);
@@ -92,11 +97,10 @@ const CartContainer = () => {
 		}
 	};
 
-	
-/**
- * When the user changes the value of an input, update the state of the order object with the new
- * value.
- */
+	/**
+	 * When the user changes the value of an input, update the state of the order object with the new
+	 * value.
+	 */
 
 	const handleOnChange = (e) => {
 		setOrder({

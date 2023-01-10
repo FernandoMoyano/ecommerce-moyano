@@ -5,30 +5,30 @@ const CartContext = createContext([]);
 export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
-	//estado incicial del carrito, + funcion que modifica el estado
+	//initial state of the cart, plus the function that modifies the state
 
 	const [cartList, setCartList] = useState([]);
-	//estados y funciones globales
+	//global states and functions
 
 
 
-	//(agregar un item)
+	//add an item
 	const addItem = (product) => {
-		//si el producto no esta -> -1
+		//the product is not -> -1
 		const idx = cartList.findIndex((prod) => prod.id === product.id);
 
 		if (idx !== -1) {
-			//si el producto NO ESTÁ
+			//the product is not
 			cartList[idx].quantity += product.quantity;
 			setCartList([...cartList]);
 		} else {
-			//si el producto SI ESTÁ
+			//the product is
 			setCartList([...cartList, product]); // push del product
 		}
 	};
 
 
-	/* Obtener la cantidad */
+	/* get the amount */
 	const getQuantity = () => {
 		let count = 0;
 		cartList.forEach((prod) => {
@@ -39,7 +39,7 @@ export const CartContextProvider = ({ children }) => {
 	};
 
 	
-	/* Precio total */
+	/* totalPrice function */
 	const totalPrice = () =>
 		cartList.reduce(
 			(quantity, producto) =>
@@ -49,12 +49,12 @@ export const CartContextProvider = ({ children }) => {
 			0
 		);
 
-	/* Vaciar Carrito */
+	/* empty cart */
 	const clearCart = () => {
 		setCartList([]);
 	};
 
-	/* Remover un item */
+	/* Remove Item */
 	const removeItem = (id) => {
 		setCartList(cartList.filter((prod) => prod.id !== id));
 	};

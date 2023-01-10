@@ -1,5 +1,3 @@
-//element=product
-//item=id
 import { addDoc, collection, doc, getFirestore, setDoc } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import { Col, Container, Modal, ModalDialog, Row } from "react-bootstrap";
@@ -8,6 +6,7 @@ import { useCartContext } from "../../context/CartContext";
 import "./CartContainer.css";
 import Swal from "sweetalert2";
 
+/* A function that is being exported. */
 const CartContainer = () => {
 	const db = getFirestore();
 	const { cartList, removeItem, clearCart, totalPrice } = useCartContext();
@@ -24,8 +23,7 @@ const CartContainer = () => {
 		total: totalPrice(),
 	});
 
-	//Actualizacion de la oreden de compra segun modificacion del carrito
-
+	/* Updating the order according to the changes in the cart. */
 	useEffect(() => {
 		setOrder((currentOrder) => {
 			return {
@@ -36,8 +34,9 @@ const CartContainer = () => {
 		});
 	}, [cartList]);
 
-	//mensajes para el usuario
-
+	/**
+	 * It shows a message with a title, text, and icon.
+	 */
 	const showMessage = (type, text, title) => {
 		Swal.fire({
 			position: "center",
@@ -49,8 +48,7 @@ const CartContainer = () => {
 		});
 	};
 
-	//Crecion de la orden de compras
-
+	/* Creating the order. */
 	const createOrder = () => {
 		const queryOrders = collection(db, "orders");
 		if (order.buyer.name === "") {
@@ -64,15 +62,16 @@ const CartContainer = () => {
 		} else if (order.buyer.email !== email2)
 			showMessage("error", "Los emails deben coincidir", false);
 		else {
-			//Actualizacion del stock en la base de datos de firestore
 
+
+			/* Updating the stock in the database. */
 			cartList.forEach((product) => {
 				const queryDoc = doc(db, "products", product.id);
 				let newStock = product.stock - product.quantity;
 				setDoc(queryDoc, { stock: newStock }, { merge: true });
 			});
 
-			// Creación de la orden de compra en firebase
+			/* Creating the order. */
 			addDoc(queryOrders, order)
 				.then(({ id }) => {
 					showMessage(
@@ -93,7 +92,11 @@ const CartContainer = () => {
 		}
 	};
 
-	// Manejo el cambio de los inputs en el form de la orden
+	
+/**
+ * When the user changes the value of an input, update the state of the order object with the new
+ * value.
+ */
 
 	const handleOnChange = (e) => {
 		setOrder({
@@ -105,7 +108,8 @@ const CartContainer = () => {
 		});
 	};
 
-	//funcion para colocar el email por segunda vez
+	/*function to place the email a second time*/
+
 	const handleOnChangeMail2 = (e) => {
 		setEmail2(e.target.value);
 	};
@@ -193,9 +197,7 @@ const CartContainer = () => {
 					Finalizar compra
 				</button>
 				<div className="totalBuy">
-					<h2 >
-						Total de la compra: $ {totalPrice()}
-					</h2>
+					<h2>Total de la compra: $ {totalPrice()}</h2>
 				</div>
 			</div>
 

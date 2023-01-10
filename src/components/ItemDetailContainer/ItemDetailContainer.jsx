@@ -9,8 +9,7 @@ const ItemDetailContainer = () => {
 	const [loading, setLoading] = useState(true);
 	const { productId } = useParams();
 
-
-
+/* A hook that is called when the component is mounted. It is used to fetch the data from the database. */
 
 	 useEffect(()=>{
 		const db=getFirestore()
@@ -21,8 +20,6 @@ const ItemDetailContainer = () => {
 		.catch(err=>console.log(err))
 		.finally(() => setLoading(false))
 	 },[])
-
-	     /* console.log(product) */
 
   
 	return (

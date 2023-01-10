@@ -9,13 +9,11 @@ const ItemDetail = ({ product }) => {
 	const [isInCart, setIsInCart] = useState("false");
 
 	const onAdd = (quantity) => {
-		setIsInCart("true");
-
-		//esta funcion proviene del Cartcontext
+		setIsInCart("true");	
 		addItem({ ...product, quantity });
 	};
 
-	/*console.log(cartList);*/
+
 	return (
 		<article className="CardDetail">
 			<div>

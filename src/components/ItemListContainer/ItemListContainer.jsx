@@ -12,6 +12,7 @@ const ItemListContainer = () => {
 
 
 
+	/* Fetching data from firestore and setting it to the state. */
 	useEffect(() => {
 		const db = getFirestore();
 		const queryCollection = collection(db, "products");

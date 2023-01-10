@@ -192,9 +192,11 @@ const CartContainer = () => {
 				>
 					Finalizar compra
 				</button>
-				<h2 className="TotalBuy">
-					Total de la compra: $ {totalPrice()}
-				</h2>
+				<div className="totalBuy">
+					<h2 >
+						Total de la compra: $ {totalPrice()}
+					</h2>
+				</div>
 			</div>
 
 			{/* Formulario de compra */}

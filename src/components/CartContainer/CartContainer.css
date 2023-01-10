@@ -42,7 +42,7 @@ h1 {
 
 
 .btnCancel {
-   background-color: rgb(236, 0, 0);
+   background-color:red;
 }
 
 .btnCart {
@@ -52,7 +52,7 @@ h1 {
    font-size: 1em;
    margin: 0.5em;
    padding: 0.5em 1em;
-   background-color: #066e1e;
+   background-color: red;
    border-radius: 8px;
    border-style: none;
    color: aliceblue;
@@ -119,6 +119,9 @@ h1 {
    font-size: 1.3rem;
    margin-bottom: 1rem;
    text-align: center;
+}
+.totalBuy{
+   margin: auto;
 }
 
 

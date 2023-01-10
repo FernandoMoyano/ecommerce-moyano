@@ -1,6 +1,6 @@
 import { addDoc, collection, doc, getFirestore, setDoc } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
-import { Col, Container, Modal, ModalDialog, Row } from "react-bootstrap";
+import { Col, Container, Modal, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import "./CartContainer.css";

@@ -20,6 +20,7 @@
 # ecommerce-moyano
 
 ## Deploy:
+[TODO-TECH] (https://gregarious-melba-e18691.netlify.app/)
 
 ## npm install
 <p>para instalar las dependencias necesarias que nos permitan ejecutar el proyeto luego de clonar el mismo</p>
